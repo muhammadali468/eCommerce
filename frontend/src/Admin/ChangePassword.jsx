@@ -42,7 +42,7 @@ const ChangePassword = () => {
         <>
             <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                    <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight">Change Password of <i>{admin_email ? admin_email : ""}</i></h2>
+                    <h2 className="mt-10 text-center text-2xl/9 tracking-tight">Change Password of {admin_email ? admin_email : ""}</h2>
                 </div>
 
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -89,7 +89,7 @@ const ChangePassword = () => {
                         <div>
                             <button
                                 onClick={handleChangePassword}
-                                className=" flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                                className="text-white flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                             >
                                 Change Password
                             </button>

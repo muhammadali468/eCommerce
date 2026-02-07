@@ -16,6 +16,7 @@ const Login = () => {
     useEffect(()=>{
         const admin_token = localStorage.getItem("admin_token")
         if(admin_token){
+            alert("Already Logged in!")
             navigate("/admin/home")
         }
     },[])

@@ -43,13 +43,14 @@ const AdminNavbar = () => {
                             {/* <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-open:block" /> */}
                         </DisclosureButton>
                     </div>
-                    <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                        <div className="flex shrink-0 items-center">
-                            <img
+                    <div className="flex items-center justify-center">
+                        <div className="flex items-center">
+                            {/* <img
                                 alt="Your Company"
                                 src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
                                 className="h-8 w-auto"
-                            />
+                            /> */}
+                            <h2>Logo</h2>
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
@@ -78,11 +79,11 @@ const AdminNavbar = () => {
                             {/* <BellIcon aria-hidden="true" className="size-6" /> */}
                         </button>
                         <Link to="/admin/change-password" className='z-10' >Change Password</Link>
-                        <button className='cursor-pointer' onClick={handleLogout}>Logout</button>
+                        <button className='cursor-pointer ml-2' onClick={handleLogout}>Logout</button>
 
                         {/* Profile dropdown */}
                         <Menu as="div" className="relative ml-3">
-                            <MenuButton className="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                            <MenuButton className="z-50 relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
                                 <span className="absolute -inset-1.5" />
                                 <span className="sr-only">Open user menu</span>
                                 <img

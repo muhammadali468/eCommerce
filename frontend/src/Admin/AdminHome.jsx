@@ -18,7 +18,7 @@ const AdminHome = () => {
 
   return (
     <>
-      {/* <Navbar/> */}
+      <AdminNavbar/>
       <h1>Welcome {admin_name}</h1>
       <h2>Admin Dashboard</h2>
       <div className="mt-10">
