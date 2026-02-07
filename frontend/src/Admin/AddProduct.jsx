@@ -32,7 +32,6 @@ const AddProduct = () => {
     const handleViewAllProducts = async () => {
         const allProductsRes = await axios.get("http://localhost:5000/api/products/get");
         setProducts(allProductsRes.data.product)
-        console.log(allProductsRes.data.product)
     }
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -122,9 +121,7 @@ const AddProduct = () => {
             console.log(error)
         }
     }
-
-    const filterProducts = products.filter((product) => selectedStatus === "all" ? true : product.productStatus === selectedStatus).filter((product) => product.productName.toLowerCase().includes(seachQuery.toLowerCase()))
-
+    const filterProducts = products.filter((product) => selectedStatus === "all" ? true : product.productStatus === selectedStatus).filter((product) => product.productName.toLowerCase().includes(seachQuery.toLowerCase()));
     const openModal = (productId) => {
         console.log(productId)
         setIsModalOpen(true);
@@ -341,13 +338,13 @@ const AddProduct = () => {
                                                 <td className="border px-3 py-2">{product.productCategoryName}</td>
                                                 <td className="border px-3 py-2">{product.productPrice}</td>
                                                 <td className="border px-3 py-2">{product.productStatus}</td>
-                                                <td className="border px-3 py-2 flex gap-2 justify-between">
+                                                <td className="border px-3 py-2 gap-2 justify-between">
                                                     <button onClick={() => handleDeleteProduct(product._id)} className="text-white px-4 py-2 rounded-xl bg-red-500 hover:underline">
                                                         Delete
                                                     </button>
                                                     <button
                                                         onClick={() => openModal(product._id)}
-                                                        className="rounded-xl bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700">
+                                                        className="rounded-xl ml-2 bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700">
                                                         Add Photos
                                                     </button>
                                                 </td>
@@ -358,9 +355,9 @@ const AddProduct = () => {
                             </div>
                             <div className="flex space-x-2 my-2">
                                 <div className="flex">
-                                    <button onClick={() => handleChangeStatus("pending")} className="bg-amber-300 p-3 cursor-pointer rounded-xl">Pending</button>
-                                    <button onClick={() => handleChangeStatus("enable")} className="bg-green-300 p-3 cursor-pointer rounded-xl">Enable</button>
-                                    <button onClick={() => handleChangeStatus("disable")} className="bg-red-300 p-3 cursor-pointer rounded-xl">Disable</button>
+                                    <button onClick={() => handleChangeStatus("pending")} className="border p-3 cursor-pointer rounded-xl">Pending</button>
+                                    <button onClick={() => handleChangeStatus("enable")} className="border mx-2 p-3 cursor-pointer rounded-xl">Enable</button>
+                                    <button onClick={() => handleChangeStatus("disable")} className="border p-3 cursor-pointer rounded-xl">Disable</button>
                                 </div>
                                 <button className="bg-red-600 rounded-xl p-4" onClick={handleDeleteProducts}>Delete Selected</button>
                             </div>
@@ -368,6 +365,7 @@ const AddProduct = () => {
                     </div>
                 </div>
             </div>
+            
             {isModalOpen === true ?
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
                     <div className="w-full max-w-md rounded-xl bg-white p-6 shadow-lg">

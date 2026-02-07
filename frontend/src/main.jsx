@@ -14,6 +14,8 @@ import AddProduct from './Admin/AddProduct.jsx'
 import UserHome from './User/UserHome.jsx'
 import UserLogin from './User/UserLogin.jsx'
 import UserRegistration from './User/UserRegistration.jsx'
+import Shop from './Pages/Shop.jsx'
+import Categories from './Pages/Categories.jsx'
 
 
 const router = createBrowserRouter([
@@ -41,7 +43,9 @@ const router = createBrowserRouter([
           { path: "register", element: <UserRegistration /> },
           { path: "home", element: <UserHome /> }
         ]
-      }
+      },
+      { path: "shop", element: <Shop /> },
+      { path: "categories", element: <Categories /> }
 
     ],
 
